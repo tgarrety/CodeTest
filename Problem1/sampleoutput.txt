@@ -1,0 +1,2 @@
+Search 1: Year with the most alive: 1963 with a count of 37304 alive (0.031133 sec)
+Search 2: Year with the most alive: 1963 with a count of 37304 alive (0.031085 sec)
