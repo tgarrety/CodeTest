@@ -77,7 +77,6 @@ bool findMostPopulatedYear(char* a_fileName)
 			mostPopulatedYear,
 			totalAliveInMostPopulatedYear,
 			elapsedTime);
-	system("pause");
 	return true;
 }
 
