@@ -7,7 +7,7 @@ Location highlights:
 To generate a dataset: Test.exe (new dataset file name) gen (number of birth&death years to generate)
 
 To use a dataset: Test.exe (dataset file name) use
-###Problem1/sampleoutput.txt contains output of running "Test.exe Problem1/testdata100k.txt use"
+###Problem1/sampleoutput.txt contains output of running Problem1/Release/Test.exe Problem1/testdata100k.txt use"
 The program attempts to solve the problem in two ways:
 ####Search 1: A sequential search of each year from 1900-2000 to find the year wtih the most alive.
 ####Search 2: A binary search to find the year with the most alive.
