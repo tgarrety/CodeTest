@@ -6,6 +6,7 @@ Location highlights:
 ###Problem1/Release/Test.exe is a precompiled version of the program. Example arguments:
 To generate a dataset: 
 `Test.exe (new dataset file name) gen (number of birth&death years to generate)`
+
 To use a dataset: 
 `Test.exe (dataset file name) use`
 ###Problem1/sampleoutput.txt contains output of running Problem1/Release/Test.exe Problem1/testdata100k.txt use"
