@@ -18,7 +18,5 @@ Location highlights:
 ### schema.sql contains a backup of the Player table used in the php script
 ### slot_machine_spin_results.php takes GET variables as input. The script validates the input and (if valid) updates the Player table appropriately.
 Example:
-'''
-slot_machine_spin_results.php?playerID=1&hash=24988d9aa627ea723a4769c83e481a76&coinsWon=100&coinsBet=30
-["1","One",2167,50,43.34]
-'''
+`slot_machine_spin_results.php?playerID=1&hash=24988d9aa627ea723a4769c83e481a76&coinsWon=100&coinsBet=30` could produce
+`["1","One",2167,50,43.34]`
