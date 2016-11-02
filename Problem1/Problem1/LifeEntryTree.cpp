@@ -50,10 +50,8 @@ int LifeEntryTree::getNumberAliveAtYear(int a_year) const
 
 	if (a_year < m_minYear || a_year > m_maxYear)
 		return 0;
-	int total = 0;
-	for (auto iter = m_aliveAtMedianYear.begin(); iter != m_aliveAtMedianYear.cend(); ++iter)
-		if ((*iter)->wasAliveDuring(a_year))
-			total++;
+	auto lambda = [a_year](LifeEntry::SPtr a_ptr) { return a_ptr->wasAliveDuring(a_year);  };
+	int total = std::count_if(m_aliveAtMedianYear.begin(), m_aliveAtMedianYear.end(), lambda);
 	if (m_aliveBeforeMedianYear)
 		total += m_aliveBeforeMedianYear->getNumberAliveAtYear(a_year);
 	if (m_aliveAfterMedianYear)
@@ -65,10 +63,8 @@ int LifeEntryTree::getNumberAliveAtYearRange(int a_startYear, int a_endYear) con
 {
 	if ((a_startYear < m_minYear && a_endYear < m_maxYear) || (a_endYear > m_minYear && a_endYear > m_maxYear))
 		return 0;
-	int aliveTotal = 0;
-	for (auto iter = m_aliveAtMedianYear.begin(); iter != m_aliveAtMedianYear.cend(); ++iter)
-		if ((*iter)->wasAliveDuring(a_startYear) || (*iter)->wasAliveDuring(a_endYear))
-			aliveTotal++;
+	auto lambda = [a_startYear, a_endYear](LifeEntry::SPtr a_ptr) { return(a_ptr->wasAliveDuring(a_startYear) || a_ptr->wasAliveDuring(a_endYear));  };
+	int aliveTotal = std::count_if(m_aliveAtMedianYear.begin(), m_aliveAtMedianYear.end(), lambda);
 	if (m_aliveBeforeMedianYear)
 		aliveTotal += m_aliveBeforeMedianYear->getNumberAliveAtYearRange(a_startYear, a_endYear);
 	if (m_aliveAfterMedianYear)
